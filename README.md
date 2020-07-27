@@ -1,7 +1,7 @@
 # DeScarGAN
 This is the official Pytorch implementation of the paper DeScarGAN.
 
-For the generation of the synthetic dataset, one has to run the  script “create_synthetic_dataset”. The generated images will be saved in the folder “data”.
+For the generation of the synthetic dataset, one has to run the  script “create_synthetic_dataset”. A new folder called "warp-set" will be created and the generated images of both the diseased and healthy subjects will be stored in there.
 
 If one wants to use the Chexpert dataset, it is available for download on this page: https://stanfordmlgroup.github.io/competitions/chexpert/.
 The data has to have the following structure:
