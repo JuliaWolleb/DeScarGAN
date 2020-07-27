@@ -19,10 +19,10 @@ The data has to have the following structure:
 
 To run the code, one needs to run “main.py”. There are the following options:
 
---dataset:   One has to determine which dataset has to be used (either “Chexpert” or “Synthetic”). 
+`--dataset`:   One has to determine which dataset has to be used (either “Chexpert” or “Synthetic”). 
 
---dataset-path:  The path to the data folders.
+`--dataset-path`:  The path to the data folders.
 
---mode:  One can choose between the mode “train” or “test”. When training, the networks are saved in the folder “./save_nets”. During test-time, those networks are loaded. Plots showing the results  can be seen using visdom (see https://github.com/facebookresearch/visdom for documentation).
+`--mode`:  One can choose between the mode “train” or “test”. When training, the networks are saved in the folder “./save_nets”. During test-time, those networks are loaded. Plots showing the results  can be seen using visdom (see https://github.com/facebookresearch/visdom for documentation).
 
 If you use this code, please cite "\arxiv"
