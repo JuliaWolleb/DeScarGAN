@@ -34,12 +34,12 @@ For the script “main.py”,There are the following options:
 Citation
 --------------------
 If you use this code, please cite 
+```
 @misc{wolleb2020descargan,
     title={DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision},
     author={Julia Wolleb and Robin Sandkühler and Philippe C. Cattin},
     year={2020},
     eprint={2007.14118},
     archivePrefix={arXiv},
-    primaryClass={eess.IV}
-}
-}
+    primaryClass={eess.IV}}
+```
