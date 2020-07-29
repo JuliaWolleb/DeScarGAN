@@ -6,7 +6,7 @@ Paper Abstract
 -------------------
 Anomaly detection and localization in medical images is a challenging task, especially when the anomaly exhibits a change of existing structures, e.g., brain atrophy or changes in the pleural space due to pleural effusions. In this work, we present a  weakly supervised and detail-preserving method that is able to detect structural changes of existing anatomical structures. In contrast to standard anomaly detection methods, our method extracts information about the disease characteristics from two groups: a group of patients affected by the same disease and a healthy control group. Together with identity-preserving mechanisms, this enables our method to extract highly disease-specific characteristics for a more detailed detection of structural changes. We designed a specific synthetic data set to evaluate and compare our method against state-of-the-art anomaly detection methods. Finally, we show the performance of our method on chest X-ray images. Our method called DeScarGAN outperforms other anomaly detection methods on the synthetic data set and by visual inspection on the chest X-ray image data set.
 
-![<img src="Result_DeScarGAN.jpg" width="100"/>](Result_DeScarGAN.jpg)
+![<img src="Result_DeScarGAN.jpg" width="30"/>](Result_DeScarGAN.jpg)
 
 
 Datasets
