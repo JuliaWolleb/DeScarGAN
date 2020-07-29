@@ -1,5 +1,5 @@
 # DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision
-This is the official Pytorch implementation of the paper DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision by Julia Wolleb, Robin Sandkühler and Philippe C. Cattin.
+This is the official Pytorch implementation of the paper *DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision* by Julia Wolleb, Robin Sandkühler and Philippe C. Cattin.
 
 
 Paper Abstract
@@ -11,9 +11,9 @@ Anomaly detection and localization in medical images is a challenging task, espe
 
 Datasets
 -------------------
-For the generation of the synthetic dataset, one has to run the  script “create_synthetic_dataset”. A new folder called "warp-set" will be created and the generated images of both the diseased and healthy subjects will be stored in there seperately.
+For the generation of the synthetic dataset, one has to run the  script [create_synthetic_dataset.py](./create_synthetic_dataset.py). A new folder called "warp-set" will be created and the generated images of both the diseased and healthy subjects will be stored in there seperately.
 
-If one wants to use the Chexpert dataset, it is available for download on this page: https://stanfordmlgroup.github.io/competitions/chexpert/.
+If one wants to use the Chexpert dataset, it is available for download [here](https://stanfordmlgroup.github.io/competitions/chexpert/).
 The data needs to be structured as follows:
 
 
@@ -31,13 +31,13 @@ The data needs to be structured as follows:
 Training & Testing
 -------------------
 
-For the script “main.py”, there are the following options:
+For the script [main.py](./main.py), there are the following options:
 
 `--dataset`:   One has to determine which dataset has to be used (either “Chexpert” or “Synthetic”). 
 
 `--dataset-path`:  The path to the data folders.
 
-`--mode`:  One can choose between the mode “train” or “test”. When training, the networks are saved in the folder “./save_nets”. During test-time, the saved models are loaded. Plots showing the convergence of the loss functions and results are visualized using visdom (see https://github.com/facebookresearch/visdom for documentation).
+`--mode`:  One can choose between the mode “train” or “test”. When training, the networks are saved in the folder “./save_nets”. During test-time, the saved models are loaded. Plots showing the convergence of the loss functions and results are visualized using [Visdom] (https://github.com/facebookresearch/visdom).
 
 Citation
 --------------------
