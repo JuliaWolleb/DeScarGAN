@@ -2,7 +2,7 @@
 This is the official Pytorch implementation of the paper DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision by Julia Wolleb, Robin Sandkühler and Philippe C. Cattin.
 
 
-![output](Result_Chexpert.png = 250x)
+![output](Result_Chexpert.png)
 
 
 Datasets
