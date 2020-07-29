@@ -1,8 +1,8 @@
 # DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision
-This is the official Pytorch implementation of the paper DeScarGAN.
+This is the official Pytorch implementation of the paper DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision by Julia Wolleb, Robin Sandkühler and Philippe C. Cattin.
 
 
-![output](Result_Chexpert.png)
+![output](Result_Chexpert.png |  width=100)
 
 
 Datasets
@@ -22,8 +22,12 @@ The data needs to be structured as follows:
     • Test
         ◦ Healthy control
         ◦ Images showing pleural effusion
+        
 
-For the script “main.py”,There are the following options:
+Training & Testing
+-------------------
+
+For the script “main.py”, there are the following options:
 
 `--dataset`:   One has to determine which dataset has to be used (either “Chexpert” or “Synthetic”). 
 
