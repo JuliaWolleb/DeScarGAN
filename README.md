@@ -1,5 +1,5 @@
 # DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision
-This is the official Pytorch implementation of the paper *DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision* by Julia Wolleb, Robin Sandkühler and Philippe C. Cattin.
+This is the official Pytorch implementation of the paper [DeScarGAN: Disease-Specific Anomaly Detection with Weak Supervision](https://arxiv.org/abs/2007.14118) by Julia Wolleb, Robin Sandkühler and Philippe C. Cattin.
 
 
 Paper Abstract
