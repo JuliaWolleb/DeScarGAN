@@ -11,6 +11,7 @@ from model.generator_discrminator import Generator, Discriminator
 from torch.autograd import Variable
 
 viz=Visdom(port=8850)
+os.system('mkdir save_nets')
 
 try:
     from apex.parallel import DistributedDataParallel as DDP
