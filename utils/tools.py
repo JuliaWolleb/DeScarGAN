@@ -145,7 +145,63 @@ class MapTransformOverNumpyArrayChannels:
         return "MapTransformOverNumpyArrayChannels.__repr__() not implemented"
         pass
 
+class RandomWarpDeformer:
 
+
+    def __init__(self, grid=(8, 8),  amount=0.3):
+        """Grid specifies the number of quads thatt are individually transformed
+        in each direction.
+        """
+        self.grid = grid
+        self.type = type
+        self.u = None
+        self.v = None
+        self.amount = amount
+        self.nodex = np.array([[1, 1], [2, 2]]) / 3
+        self.nodey = np.array([[1, 2], [2, 1]]) / 3
+        self.p = lambda t: 27.0 / 2.0 * t * (t - 2 / 3) * (t - 1) #langrange interpolation poly
+
+    def getmesh(self, img):
+
+        (w, h) = img.size
+        (n, m) = self.grid
+        step = (w / n, h / m)
+
+        self.u = 2 / 3 * self.amount * (np.random.random((2, 2)) - 0.5)
+        self.v = 2 / 3 * self.amount * (np.random.random((2, 2)) - 0.5)
+
+        def deform(x, y):
+            x = x / w
+            y = y / h
+            px = [self.p(x), self.p(1 - x)]
+            py = [self.p(y), self.p(1 - y)]
+      
+            dx = self.u[0,0] * px[0] * py[0] + self.u[0,1] * px[0] * py[1] + self.u[1,1] * px[1] * py[1] + self.u[1,0] * px[1] * py[0]
+            dy = self.v[0,0] * px[0] * py[0] + self.v[0,1] * px[0] * py[1] + self.v[1,1] * px[1] * py[1] + self.v[1,0] * px[1] * py[0]
+            regularization = 4 * x * (1 - x) * 4 * y * (1 - y)
+            xreg = x + dx * regularization
+            yreg = y + dy * regularization
+            return int(xreg * w) , int(yreg * h)
+
+        #generate mesh
+        mesh = []
+        for i in range(n):
+            for j in range(m):
+                x_min = int(i * step[0])
+                x_max = int((i + 1) * step[0])
+                y_min = int(j * step[1])
+                y_max = int((j + 1) * step[1])
+                target =  (x_min, y_min, x_max, y_max)
+                source = (  *deform(x_min, y_min),
+                            *deform(x_min, y_max),
+                            *deform(x_max, y_max),
+                            *deform(x_max, y_min))
+                mesh.append((target, source))
+        return mesh
+
+
+    
+    
 class RandomWarpTransform():
     """Transforms an image by warping it smoothly.
 
@@ -194,18 +250,6 @@ def eval_binary_classifier(ground_truth, prediction):
 
 
 class GaussianSmoothing(nn.Module):
-            """
-            Apply gaussian smoothing on a
-            1d, 2d or 3d tensor. Filtering is performed seperately for each channel
-            in the input using a depthwise convolution.
-            Arguments:
-                channels (int, sequence): Number of channels of the input tensors. Output will
-                    have this number of channels as well.
-                kernel_size (int, sequence): Size of the gaussian kernel.
-                sigma (float, sequence): Standard deviation of the gaussian kernel.
-                dim (int, optional): The number of dimensions of the data.
-                    Default value is 2 (spatial).
-            """
 
             def __init__(self, channels, kernel_size, sigma, dim=2):
                 super(GaussianSmoothing, self).__init__()
